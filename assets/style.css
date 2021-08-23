@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#intro-section {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
