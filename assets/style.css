@@ -11,6 +11,18 @@ header {
     top: 0;
     background-position: center;
     background-attachment: fixed;
+    align-items: center;
+}
+
+
+.intro {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text {
+  display: inline-block;
+  text-align: center;
 }
 
 #intro-section {
