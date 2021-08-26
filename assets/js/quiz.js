@@ -1,7 +1,16 @@
-var timer = document.getElementById("timer")
-var highScr = document.getElementById("highscorelink")
-var intro = document.getElementById("intro-section")
-var gameSec = document.getElementById("game-section")
+var question = document.getElementById("question");
+var timer = document.getElementById("timer");
+var highScr = document.getElementById("highscorelink");
+var intro = document.getElementById("intro-section");
+var gameSec = document.getElementById("game-section");
+var scorePoints = 100
+var maxQuestions =  5
+
+let currentQuestion = {}
+let acceptAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
 
 var questions = [
     {
@@ -47,6 +56,37 @@ var questions = [
     },
 ];
 
+var startQuiz = function() {
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
+};
+
+var getNewQuestion = functiions() {
+    if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('./score.html')
+    }
+
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter} of ${maxQuestions}`
+
+    var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    availableQuestions.splice(questionsIndex, 1)
+
+    accceptingAnswers = true
+};
+
 
 var timer = function () {
 // start the timer
@@ -72,9 +112,6 @@ var timer = function () {
     }, 1000);
 }
 // functions for each questions
-var beginQuiz = function() {
-
-}
 // global variable of 60 sec
 
 // global versus variable
@@ -105,8 +142,3 @@ var beginQuiz = function() {
 var startBtn = document.getElementById("startbtn")
 
 startBtn.addEventListener ("click", startGame)
-
-
-
-      
-    16 times 10 times 5
