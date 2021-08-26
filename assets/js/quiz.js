@@ -1,6 +1,6 @@
 var question = document.getElementById("question");
 var timer = document.getElementById("timer");
-var scoreText = document.getElementById("highscorelink");
+var scoreText = document.getElementById("scorelink");
 var intro = document.getElementById("intro-section");
 var gameSec = document.getElementById("game-section");
 var scorePoints = 100
