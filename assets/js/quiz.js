@@ -1,6 +1,6 @@
 var question = document.getElementById("question");
 var timer = document.getElementById("timer");
-var highScr = document.getElementById("highscorelink");
+var scoreText = document.getElementById("highscorelink");
 var intro = document.getElementById("intro-section");
 var gameSec = document.getElementById("game-section");
 var scorePoints = 100
@@ -63,7 +63,7 @@ var startQuiz = function() {
     getNewQuestion()
 };
 
-var getNewQuestion = functiions() {
+getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score)
 
@@ -87,30 +87,61 @@ var getNewQuestion = functiions() {
     accceptingAnswers = true
 };
 
+choices.forEach(choice => {
+    choice.addEventListeners('click', e =>{
+        if(!acceptingAnswers) return
 
-var timer = function () {
-// start the timer
-    var timeLeft = 100;
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
 
-    var timeInterval = setInterval(function() {
-       if (timeLeft > 1) {
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' :
+        'incorrect'
 
-        timerEl.textContent = timeLeft;
-
-        timeLeft--;
-       } else if (timeLeft === 1) {
-
-        timerEl.textContent = timeLeft;
-        timeLeft--;
-       } else {
-
-        timerEl.textContent = '';
-
-        clearInterval(timeInterval);
-
-       }
-    }, 1000);
+        if(classToApply === 'correct') {
+        incrementScore(scorePoints)
 }
+
+selectedChoice.parentElement.classList.add(classToApply)
+
+setTimeout(() =>{
+    selectedChoiceec.parentElement.classList.remove(classToApply)
+    getNewQuestion()
+
+}, 1000)
+})
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+
+
+// var timer = function () {
+// // start the timer
+//     var timeLeft = 100;
+
+//     var timeInterval = setInterval(function() {
+//        if (timeLeft > 1) {
+
+//         timerEl.textContent = timeLeft;
+
+//         timeLeft--;
+//        } else if (timeLeft === 1) {
+
+//         timerEl.textContent = timeLeft;
+//         timeLeft--;
+//        } else {
+
+//         timerEl.textContent = '';
+
+//         clearInterval(timeInterval);
+
+//        }
+//     }, 1000);
+// }
 // functions for each questions
 // global variable of 60 sec
 

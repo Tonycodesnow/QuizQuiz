@@ -48,7 +48,7 @@ header {
 }
 
 .btn:hover {
-  curser: pointer;
+  cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgb(91, 99, 64, 0.6);
   transition: transform 150ms;
   transform: scale(1.03);
