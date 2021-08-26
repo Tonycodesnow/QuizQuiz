@@ -1,7 +1,8 @@
-*,
-*::before,
-*::after {
-  background: rgb(124, 169, 228);
+:root {
+  background-color: rgb(124, 169, 228);
+}
+
+* {
   box-sizing: border-box;
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
@@ -20,7 +21,7 @@ header {
 .intro {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 90px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -38,7 +39,7 @@ header {
   outline: none;
   border: none;
   border-radius: 25px;
-  background: rgb(105, 75, 41);
+  background: rgb(85, 41, 146);
   cursor: pointer;
   text-shadow:
    0.025em 0.025em 0 yellow,
@@ -49,38 +50,45 @@ header {
 
 .btn:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgb(93, 84, 30, 0.6);
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(73, 28, 135, 0.6);
   transition: transform 150ms;
   transform: scale(1.03);
 }
 /* Option choices  */
 .option {
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 6px;
+  height: 15%;
   width: 100%;
-  border-radius: 3px;
-  background: rgb(105, 75, 41);
-  font-size: 3rem;
+  border-radius: 100px;
+  background: rgb(85, 41, 146);
+  font-size: 1.1rem;
 }
 
 .option:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgb(93, 84, 30, 0.6);
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(73, 28, 135, 0.6);
   transform: scale(1.03);
-  transform: transform 100ms;
+  transform: transform 90ms;
 }
 
 .option-prefix {
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2rem;
   color: #fff;
 }
 
 .option-text {
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
 }
 
+.correct {
+  background: linear-gradient( green);
+}
 
+.incorrect {
+  background: linear-gradient( red);
+}
 
 
 
