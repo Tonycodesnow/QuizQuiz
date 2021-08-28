@@ -55,6 +55,7 @@ header {
   transform: scale(1.03);
 }
 /* Option choices  */
+
 .option {
   display: flex;
   margin-bottom: 6px;
@@ -83,11 +84,11 @@ header {
 }
 
 .correct {
-  background: linear-gradient( green);
+  background: linear-gradient(32deg, green);
 }
 
 .incorrect {
-  background: linear-gradient( red);
+  background: linear-gradient(32deg, red);
 }
 
 

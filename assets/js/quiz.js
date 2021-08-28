@@ -1,24 +1,20 @@
-var question = document.getElementById("question");
-var timer = document.getElementById("timer");
-var scoreText = document.getElementById("scorelink");
-var intro = document.getElementById("intro-section");
-var gameSec = document.getElementById("game-section");
+var question = document.querySelector("#question");
+var timer = document.querySelector("#timer");
+var scoreText = document.querySelector("#scorelink");
+var choices = Array.from(document.querySelectorAll(".option-text"));
 var scorePoints = 100
 var maxQuestions =  5
 
-let currentQuestion = {}
-let acceptAnswers = true
-let score = 0
-let questionCounter = 0
-let availableQuestions = []
+var currentQuestion = {}
+var acceptAnswers = true
+var score = 0
+var questionCounter = 0
+var availableQuestions = []
 
 var questions = [
     {
         question: 'Which of the following is NOT an advantage of Moment.js?',
-        choice1: 'Parsing dates is easier.',
-        choice2: 'Setting timers is easier',
-        choice3: 'Formatting dates is easier.',
-        choice4: 'Manipulating dates (adding or subtracting days) is easier.',
+        choice: ['Parsing dates is easier.', 'Setting timers is easier', 'Formatting dates is easier.', 'Manipulating dates (adding or subtracting days) is easier.',]
         answer: 'Setting timers is easier',
     },
     {
@@ -67,7 +63,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('./score.html')
+     
     }
 
     questionCounter++
@@ -76,49 +72,10 @@ getNewQuestion = () => {
     var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
-
-    choices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
-    })
-
-    availableQuestions.splice(questionsIndex, 1)
-
-    accceptingAnswers = true
 };
 
-choices.forEach(choice => {
-    choice.addEventListeners('click', e =>{
-        if(!acceptingAnswers) return
 
-        acceptingAnswers = false
-        const selectedChoice = e.target
-        const selectedAnswer = selectedChoice.dataset['number']
-
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' :
-        'incorrect'
-
-        if(classToApply === 'correct') {
-        incrementScore(scorePoints)
-}
-
-selectedChoice.parentElement.classList.add(classToApply)
-
-setTimeout(() =>{
-    selectedChoiceec.parentElement.classList.remove(classToApply)
-    getNewQuestion()
-
-}, 1000)
-})
-})
-
-incrementScore = num => {
-    score +=num
-    scoreText.innerText = score
-}
-
-
-
+startQuiz()
 // var timer = function () {
 // // start the timer
 //     var timeLeft = 100;
@@ -166,10 +123,3 @@ incrementScore = num => {
 // local storage to save the high score
 
 // seperate page to high score
-
-
-
-
-var startBtn = document.getElementById("startbtn")
-
-startBtn.addEventListener ("click", startGame)
