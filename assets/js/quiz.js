@@ -2,14 +2,14 @@ var question = document.querySelector("#question");
 var timer = document.querySelector("#timer");
 var scoreText = document.querySelector("#scorelink");
 var choices = Array.from(document.querySelectorAll(".option-text"));
-var scorePoints = 100
+var scorePoints = 50
 var maxQuestions =  5
 
 var currentQuestion = {}
 var acceptAnswers = true
 var score = 0
-var questionCounter = 0
-var availableQuestions = []
+var Counter = 0
+var userInput = []
 
 var questions = [
     {
@@ -19,40 +19,27 @@ var questions = [
     },
     {
         question: 'What is (9 x 10)?',
-        choice1: '19',
-        choice2: '21',
-        choice3: '90',
-        choice4: '43',
+        choice: ['19','21', '90', '43',]
         answer: '90',
     },  
     {
         question: 'How often does the moon orbit the earth?',
-        choice1: '30 days',
-        choice2: 'Every 24 hours',
-        choice3: 'No orbit the Earth is flat',
-        choice4: '27 days',
-        answer: '27 days',
-    
+        choice: ['30 days', 'Every 24 hours', 'No orbit the Earth is flat', '27 days',]
+        answer: '27 days
     },
     {
         question: 'How many languages are written from right to Left?',
-        choice1: '12',
-        choice2: '15',
-        choice3: '51',
-        choice4: 'I dont understand this question.',
+        choice: ['12','15', '51', 'I dont understand this question.',]
         answer: '12',
     },
     {
         question: 'How often does a person touch thier face every hour?',
-        choice1: '3',
-        choice2: '7',
-        choice3: '10',
-        choice4: '16',
+        choice: ['3', '7', '10', '16',]
         answer: '16',
     },
 ];
 
-var startQuiz = function() {
+function startQuiz() {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
@@ -61,65 +48,28 @@ var startQuiz = function() {
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
-        localStorage.setItem('mostRecentScore', score)
-
-     
+        localStorage.setItem('mostRecentScore', score)  
     }
-
-    questionCounter++
-    progressText.innerText = `Question ${questionCounter} of ${maxQuestions}`
 
     var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
 };
 
-
-startQuiz()
-// var timer = function () {
-// // start the timer
-//     var timeLeft = 100;
-
-//     var timeInterval = setInterval(function() {
-//        if (timeLeft > 1) {
-
-//         timerEl.textContent = timeLeft;
-
-//         timeLeft--;
-//        } else if (timeLeft === 1) {
-
-//         timerEl.textContent = timeLeft;
-//         timeLeft--;
-//        } else {
-
-//         timerEl.textContent = '';
-
-//         clearInterval(timeInterval);
-
-//        }
-//     }, 1000);
-// }
+function timer () {
+    var timeInterval = setInterval(function() {
+          if (questionIndex > 4 && timeLeft > 0){
+        timerEl.textContent = timeLeft
+      }   else if (timeLeft > 0 && questionIndex < 4){
+        timeLeft--;
+        timerEl.textContent = timeLeft;
+      }   else if (timeLeft < 0 && questionIndex < 4 ){
+        clearInterval(timeInterval);
+        // displayMessage = "Your time is up!"
+      }
+    },1000);
+  }
 // functions for each questions
 // global variable of 60 sec
-
-// global versus variable
-
-// keep a counter of what question we're on
-
-// array of all questions (an array of obbjects)
-
-// The objects within the array called quesions
-
-// when user clicks an answer it increase counter by one and resuns show-answer
-
-// use the counter to show the specific question we're on
-
-// some if statements to see we're in the end
-
-// game over screen
-
-// type in initials and show timer
-
-// local storage to save the high score
-
-// seperate page to high score
+startBtn.addEventListener("click", startQuiz);
+questionChoices.addEventListener("click,questionDisplay")
