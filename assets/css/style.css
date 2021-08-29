@@ -39,7 +39,7 @@ header {
   outline: none;
   border: none;
   border-radius: 25px;
-  background: rgb(85, 41, 146);
+  background: rgb(107, 70, 158);
   cursor: pointer;
   text-shadow:
    0.025em 0.025em 0 yellow,
@@ -50,7 +50,7 @@ header {
 
 .btn:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgb(73, 28, 135, 0.6);
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(98, 68, 535, 0.6);
   transition: transform 150ms;
   transform: scale(1.03);
 }
@@ -59,39 +59,35 @@ header {
 .option {
   display: flex;
   margin-bottom: 6px;
-  height: 15%;
+  height: 10%;
   width: 100%;
   border-radius: 100px;
-  background: rgb(85, 41, 146);
+  background: rgb(107, 70, 158);
   font-size: 1.1rem;
 }
 
 .option:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgb(73, 28, 135, 0.6);
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(98, 68, 535, 0.6);
   transform: scale(1.03);
   transform: transform 90ms;
 }
 
-.option-prefix {
+.choice-txt {
   padding: 1.5rem 2rem;
   color: #fff;
 }
 
-.option-text {
-  padding: 1rem;
-  width: 100%;
+.quiz {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 30px 40px;
 }
-
-.correct {
-  background: linear-gradient(32deg, green);
-}
-
-.incorrect {
-  background: linear-gradient(32deg, red);
-}
-
-
 
 
 

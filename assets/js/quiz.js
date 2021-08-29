@@ -1,75 +1,105 @@
+var startQuiz = document.getElementById("start")
 var question = document.querySelector("#question");
-var timer = document.querySelector("#timer");
 var scoreText = document.querySelector("#scorelink");
-var choices = Array.from(document.querySelectorAll(".option-text"));
-var scorePoints = 50
-var maxQuestions =  5
-
-var currentQuestion = {}
+var scorePoints = 100
+var maxQuestions = 5
 var acceptAnswers = true
+var currentQuestioon = 0
 var score = 0
-var Counter = 0
 var userInput = []
 
-var questions = [
-    {
-        question: 'Which of the following is NOT an advantage of Moment.js?',
-        choice: ['Parsing dates is easier.', 'Setting timers is easier', 'Formatting dates is easier.', 'Manipulating dates (adding or subtracting days) is easier.',]
-        answer: 'Setting timers is easier',
-    },
-    {
-        question: 'What is (9 x 10)?',
-        choice: ['19','21', '90', '43',]
-        answer: '90',
-    },  
-    {
-        question: 'How often does the moon orbit the earth?',
-        choice: ['30 days', 'Every 24 hours', 'No orbit the Earth is flat', '27 days',]
-        answer: '27 days
-    },
-    {
-        question: 'How many languages are written from right to Left?',
-        choice: ['12','15', '51', 'I dont understand this question.',]
-        answer: '12',
-    },
-    {
-        question: 'How often does a person touch thier face every hour?',
-        choice: ['3', '7', '10', '16',]
-        answer: '16',
-    },
+var quizEl
+
+var timerEl = document.querySelector("#timer");
+// timer variables
+var counter = 0
+// var timer = 
+var timeLeft = 0
+var timePenalty = -10
+
+// questions section
+var questions = [{
+    question: 'Which of the following is NOT an advantage of Moment.js?',
+    choice: ['Parsing dates is easier.', 'Setting timers is easier', 'Formatting dates is easier.', 'Manipulating dates (adding or subtracting days) is easier.'],
+    answer: 1
+},
+{
+    question: 'What is (9 x 10)?',
+    choice: ['19', '21', '90', '43'],
+    answer: 2
+},
+{
+    question: 'How often does the moon orbit the earth?',
+    choice: ['30 days', 'Every 24 hours', 'No orbit the Earth is flat', '27 days'],
+    answer: 3
+    
+},
+{
+    question: 'How many languages are written from right to Left?',
+    choice: ['12', '15', '51', 'I dont understand this question.'],
+    answer: 0
+},
+{
+    question: 'How often does a person touch thier face every hour?',
+    choice: ['3', '7', '10', '16'],
+    answer: 3
+},
 ];
 
-function startQuiz() {
-    questionCounter = 0
-    score = 0
-    availableQuestions = [...questions]
-    getNewQuestion()
-};
+startQuiz.addEventListener('click', () => {
+    hideIntro();
+    startGame();
+    countdown();
+});
 
-getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
-        localStorage.setItem('mostRecentScore', score)  
+function hideIntro() {
+    var x = document.getElementById("container");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
+    console.log("hideIntro")
+}
 
-    var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
-};
+function startGame () {
 
-function timer () {
-    var timeInterval = setInterval(function() {
-          if (questionIndex > 4 && timeLeft > 0){
-        timerEl.textContent = timeLeft
-      }   else if (timeLeft > 0 && questionIndex < 4){
-        timeLeft--;
-        timerEl.textContent = timeLeft;
-      }   else if (timeLeft < 0 && questionIndex < 4 ){
-        clearInterval(timeInterval);
-        // displayMessage = "Your time is up!"
-      }
-    },1000);
-  }
+}
+
+
+function nextQuestion() {
+                                    
+}
+
+
+function countdown() {
+    timeLeft = 75;
+
+    var timeInterval = setInterval(function(){
+
+        if (timeLeft > 1) {
+
+            timerEl.textContent = "" + timeLeft;
+
+            timeLeft--;
+
+        } else {
+
+            timerEl.textContent = '';
+
+            window.alert("Times Up")
+            window.location.href = "scores.html";
+        }
+    }, 1000);
+}
+
+var checkAnswer = function(event) {
+
+}
 // functions for each questions
 // global variable of 60 sec
-startBtn.addEventListener("click", startQuiz);
-questionChoices.addEventListener("click,questionDisplay")
+
+// questionChoices.addEventListener("click,questionDisplay")
+
+addEventListener
+countdown();
