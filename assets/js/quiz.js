@@ -1,17 +1,18 @@
 var startQuiz = document.getElementById("start")
-var question = document.querySelector("#question");
 var scoreText = document.querySelector("#scorelink");
 var scorePoints = 100
 var maxQuestions = 5
 var acceptAnswers = true
-var currentQuestioon = 0
+var questionIndex = 0
 var score = 0
 var userInput = []
 
-var quizEl
-
+//  cerated HTML elements  
+var quizEl = document.querySelector('.quiz');
+// var questionEl = document.createElement('h2');
 var timerEl = document.querySelector("#timer");
 // timer variables
+
 var counter = 0
 // var timer = 
 var timeLeft = 0
@@ -46,12 +47,14 @@ var questions = [{
 },
 ];
 
+// starting the quiz section
 startQuiz.addEventListener('click', () => {
     hideIntro();
     startGame();
     countdown();
 });
 
+// hiding the landing page section
 function hideIntro() {
     var x = document.getElementById("container");
     if (x.style.display === "none") {
@@ -59,19 +62,39 @@ function hideIntro() {
     } else {
         x.style.display = "none";
     }
-    console.log("hideIntro")
 }
 
+// showing the hidden questions section
 function startGame () {
-
+    quizEl.setAttribute('style', 'display: block');
 }
 
-
+// showing following questions section
 function nextQuestion() {
-                                    
+    // display question
+    var current = questions[questionIndex];
+    var question = document.querySelector("#question");
+    
+    var choice1 = document.getElementById('choice1');
+    var choice2 = document.getElementById('choice2');
+    var choice3 = document.getElementById('choice3');
+    var choice4 = document.getElementById('choice4');
+    
+    // adding each item in the array of choice to each of the choices 
+    question.textContent = current.question;
+
+    choice1.textContent = current.choice[0]
+    choice2.textContent = current.choice[1]
+    choice3.textContent = current.choice[2]
+    choice4.textContent = current.choice[3]
+
+    document.querySelectorAll('.option').addEventListener('click', function() {
+            
+
+    })
 }
 
-
+// countdown timer section
 function countdown() {
     timeLeft = 75;
 
@@ -89,17 +112,16 @@ function countdown() {
 
             window.alert("Times Up")
             window.location.href = "scores.html";
+            clearInterval(timeInterval);
         }
     }, 1000);
 }
 
+// checking answer section 
 var checkAnswer = function(event) {
 
 }
-// functions for each questions
-// global variable of 60 sec
 
-// questionChoices.addEventListener("click,questionDisplay")
 
-addEventListener
+
 countdown();
