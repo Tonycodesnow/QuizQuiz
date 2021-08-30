@@ -8,8 +8,12 @@
 * user can input initials 
 
 
-<p align="center"><img src="./assets/images/pix.png" width="70%"></p>
+<p align="center"><img src="./assets/images/Pix.png" width="70%"></p>
 
 
 
-- side note This assignment was very challenging and although I made many mistakes with my attempts to complete this taks I can surely say I learned a lot throughout this challenge. 
+- On a side note this assignment was very challenging and although I made many mistakes with my attempts to complete this taks, I can surely say I learned a lot throughout this challenge. 
+
+- Github repo https://github.com/Tonycodesnow/QuizQuiz
+
+- Live site on browser https://tonycodesnow.github.io/QuizQuiz/
