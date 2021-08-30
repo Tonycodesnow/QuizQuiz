@@ -17,7 +17,6 @@ header {
     align-items: center;
 }
 
-
 .intro {
   display: flex;
   justify-content: center;
@@ -88,17 +87,4 @@ header {
   max-width: 600px;
   padding: 30px 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
