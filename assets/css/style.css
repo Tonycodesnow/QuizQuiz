@@ -4,17 +4,18 @@
 
 * {
   box-sizing: border-box;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+
 /* Main landing page */
 header {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    background-position: center;
-    background-attachment: fixed;
-    align-items: center;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  background-position: center;
+  background-attachment: fixed;
+  align-items: center;
 }
 
 .intro {
@@ -29,6 +30,7 @@ header {
   display: inline-block;
   text-align: center;
 }
+
 /* Buttons */
 .btn {
   font-size: 30px;
@@ -41,10 +43,10 @@ header {
   background: rgb(107, 70, 158);
   cursor: pointer;
   text-shadow:
-   0.025em 0.025em 0 yellow,
-   0.05em 0.05em 0 blue,
-   0.075em 0.075em 0 red,
-   0.1em 0.1em 0 black
+    0.025em 0.025em 0 yellow,
+    0.05em 0.05em 0 blue,
+    0.075em 0.075em 0 red,
+    0.1em 0.1em 0 black
 }
 
 .btn:hover {
@@ -53,6 +55,7 @@ header {
   transition: transform 150ms;
   transform: scale(1.03);
 }
+
 /* Option choices  */
 
 .option {
@@ -87,4 +90,3 @@ header {
   max-width: 600px;
   padding: 30px 40px;
 }
-

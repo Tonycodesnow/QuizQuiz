@@ -20,42 +20,42 @@
                 <h1>Welcome to the QuizQuiz Challenge!</h1>
                 <p>This is a test that will be quick so in 75 seconds you have to answer
                     5 questions good luck!</p>
-                    <!-- start section -->
-                    <button id="start" class="btn">Start Quiz</button>
-                    <a href="scores.html">
-                        <button id="scores" class="btn">Scores</button>
-                    </a>
+                <!-- start section -->
+                <button id="start" class="btn">Start Quiz</button>
+                <a href="scores.html">
+                    <button id="scores" class="btn">Scores</button>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- question section -->
+    <section class="quiz" style="display: none">
+        <div class="text">
+            <h2 id="question">Your question here</h2>
+
+            <!-- quiz answer choices -->
+            <div id="answers">
+                <div class="option">
+                    <h4 class="choice" id="choice1"></h4>
                 </div>
-            </main>
-        </div>
-            
-        <!-- question section -->
-        <section class="quiz" style="display: none">
-            <div class="text">
-                <h2 id="question">Your question here</h2>
-       
-                <!-- quiz answer choices -->
-                <div id="answers">
-                    <div class="option">
-                        <h4 class="choice" id="choice1"></h4>
-                    </div>
-                    <div class="option">
-                         <h4 class="choice" id="choice2"></h4>
-                    </div>
-                    <div class="option">
-                        <h4 class="choice" id="choice3"></h4>
-                    </div>
-                    <div class="option">
-                        <h4 class="choice" id="choice4"></h4>
-                    </div>
+                <div class="option">
+                    <h4 class="choice" id="choice2"></h4>
+                </div>
+                <div class="option">
+                    <h4 class="choice" id="choice3"></h4>
+                </div>
+                <div class="option">
+                    <h4 class="choice" id="choice4"></h4>
                 </div>
             </div>
-        </section>
-        <div hidden id="endpage">
-                <h3>Congratulations</h3>
-                <p>Enter Initial:<span><input type="text" name=scores 
-                    placeholder="Please Enter" id="scoreInput"></span><span><button id="scorebtn" type="submit">Submit</button></span></p>
         </div>
+    </section>
+    <div hidden id="endpage">
+        <h3>Congratulations</h3>
+        <p>Enter Initial:<span><input type="text" name=scores placeholder="Please Enter"
+                    id="scoreInput"></span><span><button id="scorebtn" type="submit">Submit</button></span></p>
+    </div>
     <script src="./assets/js/quiz.js"></script>
 </body>
 
